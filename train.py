@@ -49,3 +49,19 @@ with mlflow.start_run():
 
     print(f"Modelo entrenado y precisión: {accuracy:.4f}")
     print("Experimento registrado con MLflow.")
+
+    print(f"Modelo entrenado y precisión: {accuracy:.4f}")
+    print("Experimento registrado con MLflow.")
+
+    # --- Sección de Reporte para CML ---
+    # 1. Generar la matriz de confusión
+    cm = confusion_matrix(y_test, y_pred)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+    plt.title("Matriz de Confusión")
+    plt.xlabel("Predicciones")
+    plt.ylabel("Valores Reales")
+    plt.savefig("confusion_matrix.png")
+    print("Matriz de confusión guardada como 'confusion_matrix.png'")
+    # --- Fin de la sección de Reporte ---
+
