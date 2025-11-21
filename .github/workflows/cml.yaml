@@ -11,8 +11,11 @@ jobs:
           npm install -g @dvcorg/cml
       - name: Debug repo contents
         run: |
+          echo "PWD:"
           pwd
+          echo "ls:"
           ls
+          echo "ls -R:"
           ls -R
       - name: Run training script
         env:
