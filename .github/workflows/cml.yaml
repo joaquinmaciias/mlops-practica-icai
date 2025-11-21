@@ -81,6 +81,9 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
+      - name: Show active gcloud account
+        run: gcloud auth list
+
       - name: Set up gcloud CLI and kubectl
         uses: google-github-actions/setup-gcloud@v2
         with:
