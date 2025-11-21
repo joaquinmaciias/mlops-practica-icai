@@ -3,11 +3,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 COPY requirements.txt .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app_web.py .
+COPY app.py .
+COPY model.pkl .
 
-EXPOSE 8501
+EXPOSE 5000
 
-CMD ["streamlit", "run", "app_web.py"]
+CMD ["python", "app.py"]

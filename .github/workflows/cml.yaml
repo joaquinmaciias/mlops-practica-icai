@@ -57,17 +57,15 @@ jobs:
       - name: Configure Docker to use GCR
         run: gcloud auth configure-docker
 
-      # --- API ---
+      # Imagen API
       - name: Build and Push API Docker Image
         run: |
           docker build -t gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api:latest .
-          docker push gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api:latest
 
-      # --- WEB ---
+      # Imagen WEB
       - name: Build and Push Web Docker Image
         run: |
           docker build -t gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-web:latest -f Dockerfile.web .
-          docker push gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-web:latest
 
       - name: Deploy to GKE
         run: |
