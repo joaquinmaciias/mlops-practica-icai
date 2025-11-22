@@ -11,7 +11,7 @@ stages:
       - requirements.txt
       - data/iris_dataset.csv
     outs:
-      - model.pkl
+      - models/model.pkl
       - confusion_matrix.png
     metrics:
       - mlflow_metrics.json
