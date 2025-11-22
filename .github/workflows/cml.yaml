@@ -79,6 +79,16 @@ jobs:
           version: 'latest'
           install_components: 'gke-gcloud-auth-plugin'
 
+      - name: Configure DVC Remote
+        env:
+          DAGSHUB_API_KEY: ${{ secrets.DAGSHUB_API_KEY }}
+        run: |
+          dvc remote modify origin --local access_key_id $DAGSHUB_API_KEY
+          dvc remote modify origin --local secret_access_key $DAGSHUB_API_KEY
+
+      - name: DVC Pull Model
+        run: dvc pull -r origin
+
       - name: Get GKE credentials
         run: |
           gcloud container clusters get-credentials ${{ vars.GKE_CLUSTER }} \
