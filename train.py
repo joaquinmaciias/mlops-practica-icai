@@ -41,7 +41,7 @@ def train_model(n_estimators):
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
 
-        joblib.dump(model, 'model.pkl')
+        joblib.dump(model, 'models/model.pkl')
 
         mlflow.sklearn.log_model(model, "random-forest-model")
         mlflow.log_param("n_estimators", n_estimators)
