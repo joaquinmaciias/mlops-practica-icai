@@ -16,12 +16,12 @@ stages:
       size: 2928
     - path: requirements.txt
       hash: md5
-      md5: c4889b5650c1d9715bd5174d2d273552
-      size: 100
+      md5: 0609316c4455fc5a2b5747479a426350
+      size: 118
     - path: train.py
       hash: md5
-      md5: 67ebc85869521acb3e9ed7b983890015
-      size: 2443
+      md5: 283605dbd2d51c4273871b1476571118
+      size: 2545
     params:
       params.yaml:
         train.n_estimators: 200
@@ -34,7 +34,7 @@ stages:
       hash: md5
       md5: 9a0379eaa11dd7b9e9995a62a5f21656
       size: 17
-    - path: model.pkl
+    - path: models/model.pkl
       hash: md5
-      md5: 64804547e1456f802c2b9fef23e3db4e
+      md5: 661618a29ea89245859655182da3f781
       size: 370017
